@@ -1,0 +1,173 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+body {
+    max-width: 900px;
+    width: 90%;
+    margin: auto;
+    background-image: url(kepek/hatter.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: white;
+}
+
+main {
+    background-color: rgba(0, 0, 0, 0.8);
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    grid-template-areas: 
+    "h h h"
+    "n n n"
+    "b a j"
+    "f f f";
+    padding: 10px;
+}
+
+header {
+    grid-area: h;
+}
+
+nav {
+    grid-area: n;
+}
+
+aside#bal {
+    grid-area: b;
+    text-align: justify;
+}
+
+aside#jobb {
+    grid-area: j;
+    text-align: justify;
+}
+
+article {
+    grid-area: a;
+    text-align: center;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-areas: 
+    "c c c"
+    "k k2 k3";
+}
+
+#cim {
+    grid-area: c;
+}
+
+.kepresz {
+    grid-area: k;
+}
+
+.kepresz2 {
+    grid-area: k2;
+}
+
+.kepresz3 {
+    grid-area: k3;
+}
+
+footer {
+    grid-area: f;
+    text-align: center;
+}
+
+nav ul {
+    list-style-type: none;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    gap: 5px;
+    text-align: center;
+    padding: 5px;
+}
+
+nav li {
+    border: none;
+    padding: 5px;
+    background-color: rgba(68, 133, 255, 0.466);
+}
+
+nav a {
+    border: none;
+    text-decoration: none;
+    color: lightblue;
+    padding: 5px;
+}
+
+img {
+    border: none;
+    width: 100%;
+}
+
+h1 {
+    color: lightblue;
+}
+
+/* TABLET nézet */
+
+@media screen and (max-width: 700px) {
+    body {
+      font-size: 2.5vw;
+      width: 100%;
+    }
+
+    main {
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas: 
+        "h h"
+        "n n"
+        "b j"
+        "a a"
+        "f f";
+    }
+
+    nav ul {
+        grid-template-columns: 1fr;
+    }
+
+    article {
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas: 
+        "c c"
+        "k k2"
+        "k3 k3";
+    }
+    
+  }
+
+/* MOBIL nézet */
+
+@media screen and (max-width: 600px) {
+    body {
+      font-size: 3vw;
+      width: 100%;
+    }
+
+    main {
+        grid-template-columns: 1fr;
+        grid-template-areas: 
+        "h"
+        "n"
+        "b"
+        "j"
+        "a"
+        "f";
+    }
+
+    nav ul {
+        grid-template-columns: 1fr;
+    }
+
+    article {
+        grid-template-columns: 1fr;
+        grid-template-areas: 
+        "c"
+        "k"
+        "k2"
+        "k3";
+    }
+  }
